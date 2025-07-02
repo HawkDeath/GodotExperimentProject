@@ -1,5 +1,20 @@
-[gd_scene format=3 uid="uid://d1bbqwynvbtvd"]
+[gd_scene load_steps=4 format=3 uid="uid://d1bbqwynvbtvd"]
 
-[node name="MainScene" type="Node3D"]
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_und3l"]
+
+[sub_resource type="Sky" id="Sky_w2twt"]
+sky_material = SubResource("ProceduralSkyMaterial_und3l")
+process_mode = 3
+
+[sub_resource type="Environment" id="Environment_pw63i"]
+background_mode = 2
+sky = SubResource("Sky_w2twt")
+ambient_light_source = 3
+reflected_light_source = 2
+tonemap_mode = 4
+
+[node name="WorldEnvironment" type="WorldEnvironment"]
+environment = SubResource("Environment_pw63i")
 
 [node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2.4708)
